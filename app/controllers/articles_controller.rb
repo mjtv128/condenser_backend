@@ -44,12 +44,14 @@ class ArticlesController < ApplicationController
    end
 
      def index 
-        user = get_current_user
-        if user 
-            render json: user.articles 
-        else 
-            render json: {error: 'Unable to validate user'}, status: 401
-        end
+        # user = get_current_user
+        # if user 
+            # render json: user.articles 
+        # else 
+            # render json: {error: 'Unable to validate user'}, status: 401
+        # end
+        articles = Article.all
+        render json: articles
      end
     #     article = Article.all 
     #     render json: article

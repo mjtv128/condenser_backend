@@ -1,13 +1,14 @@
 class CommentsController < ApplicationController
     def index 
-        comment = Comment.all 
-        render json: comment
+        comments = Comment.all 
+        render json: comments
     end
 
     def create
         article_name = params[:article_name]
         article_key = hash_string(article_name)
         comment = Comment.create(content: params[:content], user_id: params[:user_id], article_key: article_key)
+        puts 'create mthod'
         render json: comment
         # if comment.save 
         #     render json: comment

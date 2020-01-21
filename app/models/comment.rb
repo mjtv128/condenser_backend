@@ -1,6 +1,6 @@
 class Comment < ApplicationRecord
     belongs_to :user
-    belongs_to :story
+    # belongs_to :story
     
     # def selectCommentsByArticleKey(article_key)
     #     Comment.where({ article_key: article_key})

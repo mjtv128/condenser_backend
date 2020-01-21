@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   post '/login', to: 'users#login'
   get 'comments/:article_name', to: "comments#show_by_article_name"
   post '/comments', to: 'comments#create'
+  get '/comments', to: 'comments#index'
   # get '/comments', to: 'comments#create'
 
 resources :articles
